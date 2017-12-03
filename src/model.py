@@ -15,4 +15,5 @@ class Model:
 
     def next(self, point, epsilon=0):
         noise = epsilon * normalvariate(0, 1) * point[0]
-        return self.f(*point) + noise, self.g(*point)
+        new_point = self.f(*point) + noise, self.g(*point)
+        return (0, 0) if new_point[0] <= 0 or new_point[1] <= 0 else new_point

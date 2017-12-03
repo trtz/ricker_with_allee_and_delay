@@ -1,11 +1,11 @@
 
 def write_to_file(filename, float_list, rewrite=True):
     if rewrite:
-        open(filename, 'w').close()
+        open(filename, 'w+').close()
     result_str = ''
     for value in float_list:
         result_str += str(value) + '\n'
-    with open(filename, 'a') as file:
+    with open(filename, 'a+') as file:
         file.write(result_str)
 
 
